@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Materialize / BOOTSTRAP SOCIAL BUTTON CSS </title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-2.2.2.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css" />
+
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" />
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://rawgit.com/lipis/bootstrap-social/gh-pages/bootstrap-social.css" />
+      <script type="text/javascript" src="https://rawgit.com/AyumuKasuga/SocialShare/master/SocialShare.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <style id="compiled-css" type="text/css">
+      body {
+  margin: 5px
+}
+
+.counter {
+  margin-left: 16px padding-right: 1rem;
+  font-weight: bold
+}
+
+.btn {
+  padding-right: 1rem;
+}
+
+.btn-social,
+.btn-social-icon {
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+    <script src="/js/stringify.js?8819732055a0d588f603af8d8cd110f114596d66" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    <nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Social Share Buttons Counter</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<h5>Social share count for: <em id="thisurl"></em></h5>
+<!-- SOCIAL BUTTON -->
+<div class="col m6 social-buttons">
+<!-- EX: class= col m6 for Materalize col-sm-4 for Bootstrap -->
+
+	<h5>Share button with counter:</h5>
+
+  <a class="btn btn-block btn-social btn-facebook share s_facebook">
+    <span class="fa fa-facebook"></span>Facebook (<span class="counter c_facebook"></span>)
+  </a>
+  <a class="btn btn-block btn-social btn-google share s_plus">
+    <span class="fa fa-google"></span>Google (<span class="counter c_plus"></span>)
+  </a>
+  <a class="btn btn-block btn-social btn-linkedin share s_linkedin">
+    <span class="fa fa-linkedin"></span>LinkedIn (<span class="counter c_linkedin"></span>)
+  </a>
+  <a class="btn btn-block btn-social btn-pinterest share s_pinterest">
+    <span class="fa fa-pinterest"></span>Pinterest (<span class="counter c_pinterest"></span>)
+  </a>
+  <a class="btn btn-block btn-social btn-twitter share s_twitter">
+    <span class="fa fa-twitter"></span>Twitter
+  </a>
+  <a class="btn btn-block btn-social btn-odnoklassniki share s_odnoklassniki">
+    <span class="fa fa-odnoklassniki"></span>Odnoklassniki (<span class="counter c_odnoklassniki"></span>)
+  </a>
+  <a class="btn btn-block btn-social btn-vk share s_vk">
+    <span class="fa fa-vk"></span>VK (<span class="counter c_vk"></span>)
+  </a>
+	<a class="btn btn-block btn-social btn-reddit share s_reddit">
+    <span class="fa fa-reddit"></span>Reddit
+  </a>
+	
+	<h5>Social share no counter:</h5>
+	
+  <a class="btn btn-block btn-social btn-adn">
+    <span class="fa fa-adn"></span>App.net
+  </a>
+  <a class="btn btn-block btn-social btn-bitbucket">
+    <span class="fa fa-bitbucket"></span>Bitbucket
+  </a>
+  <a class="btn btn-block btn-social btn-dropbox">
+    <span class="fa fa-dropbox"></span>Dropbox
+  </a>
+  <a class="btn btn-block btn-social btn-flickr">
+    <span class="fa fa-flickr"></span>Flickr
+  </a>
+  <a class="btn btn-block btn-social btn-foursquare">
+    <span class="fa fa-foursquare"></span>Foursquare
+  </a>
+  <a class="btn btn-block btn-social btn-github">
+    <span class="fa fa-github"></span>GitHub
+  </a>
+  <a class="btn btn-block btn-social btn-instagram">
+    <span class="fa fa-instagram"></span>Instagram
+  </a>
+  <a class="btn btn-block btn-social btn-microsoft">
+    <span class="fa fa-windows"></span>Microsoft
+  </a>
+  <a class="btn btn-block btn-social btn-openid">
+    <span class="fa fa-openid"></span>OpenID
+  </a>
+  <a class="btn btn-block btn-social btn-soundcloud">
+    <span class="fa fa-soundcloud"></span>SoundCloud
+  </a>
+  <a class="btn btn-block btn-social btn-tumblr share s_tumblr">
+    <span class="fa fa-tumblr"></span>Tumblr
+  </a>
+	
+	<h5>Button no counter not sharable:</h5>
+	
+  <a class="btn btn-block btn-social btn-vimeo">
+    <span class="fa fa-vimeo-square"></span>Vimeo
+  </a>
+  <a class="btn btn-block btn-social btn-yahoo">
+    <span class="fa fa-yahoo"></span>Yahoo!
+  </a>
+
+  <hr>
+
+  <div class="text-center">
+    <a class="btn btn-social-icon btn-adn"><span class="fa fa-adn"></span></a>
+    <a class="btn btn-social-icon btn-bitbucket"><span class="fa fa-bitbucket"></span></a>
+    <a class="btn btn-social-icon btn-dropbox"><span class="fa fa-dropbox"></span></a>
+    <a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+    <a class="btn btn-social-icon btn-flickr"><span class="fa fa-flickr"></span></a>
+    <a class="btn btn-social-icon btn-foursquare"><span class="fa fa-foursquare"></span></a>
+    <a class="btn btn-social-icon btn-github"><span class="fa fa-github"></span></a>
+    <a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>
+    <a class="btn btn-social-icon btn-instagram"><span class="fa fa-instagram"></span></a>
+    <a class="btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
+    <a class="btn btn-social-icon btn-microsoft"><span class="fa fa-windows"></span></a>
+    <a class="btn btn-social-icon btn-odnoklassniki"><span class="fa fa-odnoklassniki"></span></a>
+    <a class="btn btn-social-icon btn-openid"><span class="fa fa-openid"></span></a>
+    <a class="btn btn-social-icon btn-pinterest"><span class="fa fa-pinterest"></span></a>
+    <a class="btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a>
+    <a class="btn btn-social-icon btn-soundcloud"><span class="fa fa-soundcloud"></span></a>
+    <a class="btn btn-social-icon btn-tumblr"><span class="fa fa-tumblr"></span></a>
+    <a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+    <a class="btn btn-social-icon btn-vimeo"><span class="fa fa-vimeo-square"></span></a>
+    <a class="btn btn-social-icon btn-vk"><span class="fa fa-vk"></span></a>
+    <a class="btn btn-social-icon btn-yahoo"><span class="fa fa-yahoo"></span></a>
+  </div>
+</div>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+/***** TEST URL *****/
+//var thisurl = window.location.href ;
+var thisurl = "https://mrdevil131.github.io/";
+$('#thisurl').text(thisurl);
+/********************/
+
+$(document).ready(function() {
+
+  $('.share').ShareLink({
+    url: thisurl, // link on shared page
+    //class_prefix: 's_', // optional class prefix for share elements (buttons or links or everything), default: 's_'
+    width: 640, // optional popup initial width
+    height: 480 // optional popup initial height
+  })
+
+  $('.counter').ShareCounter({
+    //url: 'http://google.com/',
+    url: thisurl, // url for which you want show like counter
+    //class_prefix: 'c_', // optional class prefix for counter elements, default: 'c_'
+    display_counter_from: 0, // optional to set when counter is display, default: 0
+    increment: false // Optional. If this option is true you can summarize counters from different sources just using multiple classes for one container.
+  })
+
+});
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "e2u0pdus"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+</body>
+</html>
