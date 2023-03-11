@@ -6,7 +6,6 @@ body {
 }
 
 .wr1{
-	padding-top: 12.5em;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -19,27 +18,24 @@ body {
 }
 
 .wr1 div{
+
   width: 40%;
   height: 256px;
   font-size: 40px;
   text-align: center;
-	margin-top: 25px;
-	margin-left: 25px;
-	margin-right: 25px;
+	margin: 25px;
 }
  
-.wr1 div:nth-child(4){
- margin-top: 10px;
-}
-.wr1 div:nth-child(5){
+.wr1 div:nth-child(3){
  margin-top: 10px;
 }
 </style>
 
-<div class="wr1" id="c">
+<body id="body">
+<div class="wr1" id="div">
     <div style=" background-image:url(f.png);background-repeat:space"></div>
-    <div style=" background-image:url(2gis.png);background-repeat:space"></div>
 	<div style=" background-image:url(vk.png);background-repeat:space"></div>
+    <div style=" background-image:url(2gis.png);background-repeat:space"></div>
   </div>
 
 <script>
@@ -54,15 +50,16 @@ function AutoScale()
 
     if(width > 1280)
     {
-   	 document.getElementById('c').style = 'padding-top: 12.5em;';
+   	 document.getElementById('div').style = 'margin-top:25vh;';
     }
     else if(width <= 1280 && width > 720)
     {
-   	 document.getElementById('c').style = 'padding-top: 15.5em;';
+   	 document.getElementById('div').style = 'margin-top:25vh;';
     }
     else if(width < 720)
     {
-   	 document.getElementById('c').style = 'padding-top: 17.5em;';
+   	 document.getElementById('div').style = 'margin-top:25vh;';
     }
 }
 </script>
+</body>
