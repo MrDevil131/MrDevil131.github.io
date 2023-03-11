@@ -1,0 +1,72 @@
+<html>
+<style>
+.pyramid {
+	margin-top: 10em;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.pyramid__section {
+  flex: 1 1 100%;
+  background-color: #844995;
+  margin-bottom: 2px;
+}
+
+.pyramid__section:nth-of-type(even) {
+  background-color: #844995;;
+}
+
+.pyramid__section:hover {
+  background-color: #c988ba;
+}
+
+/* Ignore the styles below: it's just making everything a little prettier. */
+body {
+	background: #f6f5f8 url(0.png); /* Цвет фона и путь к файлу */
+	background-repeat: round;
+  font-family: sans-serif;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<div class="pyramid">
+  <div class="pyramid__section"></div>
+  <div class="pyramid__section"></div>
+  <div class="pyramid__section"></div>
+</div>
+
+<script>
+a = document.getElementsByTagName('html');
+a[0].style.transform = "scale(100%)";
+
+/* Just here to make the buttons work. */
+document.getElementById('add-section').addEventListener('click', () => {
+  const newSection = document.createElement('div');
+  newSection.classList.add('pyramid__section');
+  document.querySelector('.pyramid').appendChild(newSection);
+  document.getElementById('remove-section').disabled = false;
+});
+
+document.getElementById('remove-section').addEventListener('click', () => {
+  const sectionLength = () => document.querySelectorAll('.pyramid__section').length;
+  if (sectionLength() > 1) {
+    document.querySelector('.pyramid__section').remove();
+  }
+  if(sectionLength() === 1) {
+    document.getElementById('remove-section').disabled = true;
+  }
+});
+</script>
+</html>
