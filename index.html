@@ -1,200 +1,211 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>Виолет - отзывы</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  
- <style>
- @-webkit-keyframes swing {
-  15% {
-    -webkit-transform: translateX(9px);
-    transform: translateX(9px);
-  }
-  30% {
-    -webkit-transform: translateX(-9px);
-    transform: translateX(-9px);
-  }
-  40% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-  50% {
-    -webkit-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-  65% {
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes swing {
-  15% {
-    -webkit-transform: translateX(9px);
-    transform: translateX(9px);
-  }
-  30% {
-    -webkit-transform: translateX(-9px);
-    transform: translateX(-9px);
-  }
-  40% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-  50% {
-    -webkit-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-  65% {
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
-
-body {
- background-color: #f2f2f2;
-	font-family: 'Montserrat', sans-serif;
-}
-
-.container {
-	width: 600px;
- margin: 0 auto;
- text-align: center;
-}
-
-h1 {
- font-size: 57px;
- margin-bottom: 5vh;
-  margin-top: 5vh;
- color: #333;
-  font-weight: normal;
-}
-
-h1:hover {
- -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-}
-
-.social-buttons {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
- align-items: center;
-}
-
-.btn {
- display: block;
- width: 256px;
- height: 256px;
- margin: 20px;
- border-radius: 50%;
- color: #fff;
- font-size: 36px;
- font-weight: bold;
- text-align: center;
- line-height: 200px;
- cursor: pointer;
- transition: background-color 0.3s ease-in-out;
-}
-
-.vk {
-   background-color: #2d76a6;
-}
-
-.vk:hover {
-   background-color: #2d76a6;
- -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-}
-
-.gis {
-   background-color: #f8f8f8;
-   border: 5px dashed #C7C7C7;
-}
-
-.gis:hover {
-   background-color: #f8f8f8;
-  -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-}
-
-.flamp {
-	background-color: #2e6be5;
-}
-
-.flamp:hover {
-	background-color: #2e6be5;
-  -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-}
-
-.logo {
-	background-color: #ffffff;
-	border: 5px dashed #C988BA;
-}
-
-.logo:hover {
-	background-color: #ffffff;
-  -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-}
-
- @media screen and (max-width: 1080px) {
-   .container {
-    transform: scale(0.7);
-   }
-  }
-   @media screen and (max-width: 960px) {
-   .container {
-    transform: scale(0.6);
-   }
-  }
-   @media screen and (max-width: 720px) {
-   .container {
-    transform: scale(0.5);
-   }
-   @media screen and (max-width: 640px) {
-   .container {
-    transform: scale(0.4);
-   }
-  }
- </style>
- 
-</head>
-<body>
- <div class="container">
-  <h1>Бонусы за отзыв (:</h1>
-  <div class="social-buttons">
-  	<a href="#" class="btn logo" style="background-image:url(logo.png);background-repeat:space;"></a>
-   <a href="#" class="btn vk" style="background-image:url(vk.png);background-repeat:space;"></a>
-   <a href="#" class="btn flamp" style="background-image:url(flamp.png);background-repeat:space;"></a>
-      <a href="#" class="btn gis" style="background-image:url(2gis.png);background-repeat:space;"></a>
-  </div>
- </div>
-</body>
+	<head>
+		<title>Виолет - отзывы</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+		<style>
+			@-webkit-keyframes swing {
+			15% {
+			-webkit-transform: translateX(9px);
+			transform: translateX(9px);
+			}
+			30% {
+			-webkit-transform: translateX(-9px);
+			transform: translateX(-9px);
+			}
+			40% {
+			-webkit-transform: translateX(6px);
+			transform: translateX(6px);
+			}
+			50% {
+			-webkit-transform: translateX(-6px);
+			transform: translateX(-6px);
+			}
+			65% {
+			-webkit-transform: translateX(3px);
+			transform: translateX(3px);
+			}
+			100% {
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+			}
+			}
+			@keyframes swing {
+			15% {
+			-webkit-transform: translateX(9px);
+			transform: translateX(9px);
+			}
+			30% {
+			-webkit-transform: translateX(-9px);
+			transform: translateX(-9px);
+			}
+			40% {
+			-webkit-transform: translateX(6px);
+			transform: translateX(6px);
+			}
+			50% {
+			-webkit-transform: translateX(-6px);
+			transform: translateX(-6px);
+			}
+			65% {
+			-webkit-transform: translateX(3px);
+			transform: translateX(3px);
+			}
+			100% {
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+			}
+			}
+			* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			}
+			body {
+			background-color: #f2f2f2;
+			font-family: 'Montserrat', sans-serif;
+			}
+			.container {
+			max-width: 600px;
+			margin: 0 auto;
+			text-align: center;
+			}
+			.social-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+			}
+			.btn {
+			display: block;
+			width: 256px;
+			height: 256px;
+			margin: 20px;
+			border-radius: 50%;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			line-height: 200px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+			}
+			h1 {
+			font-size: 60px;
+			margin-bottom: 5vh;
+			margin-top: 5vh;
+			color: #333;
+			font-weight: normal;
+			}
+			h1:hover {
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			.vk {
+			background-color: #2d76a6;
+			}
+			.vk:hover {
+			background-color: #2d76a6;
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			.gis {
+			background-color: #f8f8f8;
+			border: 5px dashed #C7C7C7;
+			}
+			.gis:hover {
+			background-color: #f8f8f8;
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			.flamp {
+			background-color: #2e6be5;
+			}
+			.flamp:hover {
+			background-color: #2e6be5;
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			.logo {
+			background-color: #ffffff;
+			border: 5px dashed #C988BA;
+			}
+			.logo:hover {
+			background-color: #ffffff;
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			
+			@media screen and (max-width: 1080px) {
+			.btn {
+			margin 0 0 0 0;
+			}
+			}
+			
+			@media screen and (max-width: 960px) {
+			.btn {
+			width: 192px;
+			height: 192px;
+			margin 0 0 0 0;
+			}
+			.container {
+			max-width: 500px;
+			}
+			h1 {
+			font-size: 50px;
+			}
+			}
+			
+			@media screen and (max-width: 720px) {
+			.btn {
+			width: 128px;
+			height: 128px;
+			margin 0 0 0 0;
+			}
+			.container {
+			max-width: 400px;
+			}
+			h1 {
+			font-size: 40px;
+			}
+			}
+			
+			@media screen and (max-width: 640px) {
+			.btn {
+			width: 128px;
+			height: 128px;
+			margin 0 0 0 0;
+			}
+			.container {
+			max-width: 400px;
+			}
+			h1 {
+			font-size: 40px;
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Бонусы за отзыв</h1>
+			<div class="social-buttons">
+				<a href="https://vk.com/violet_ekb" target="_blank" class="btn logo" style="background-image:url(logo.png);background-repeat:space;background-size: contain;"></a>
+				<a href="https://vk.com/topic-206092910_49670541" target="_blank" class="btn vk" style="background-image:url(vk.png);background-repeat:space;background-size: contain;"></a>
+				<a href="https://ekaterinburg.flamp.ru/search/violet" target="_blank" class="btn flamp" style="background-image:url(flamp.png);background-repeat:space;background-size: contain;"></a>
+				<a href="https://2gis.ru/ekaterinburg/branches/70000001046388213" target="_blank" class="btn gis" style="background-image:url(2gis.png);background-repeat:space;background-size: contain;"></a>
+			</div>
+		</div>
+	</body>
 </html>
