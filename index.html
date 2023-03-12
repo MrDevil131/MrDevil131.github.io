@@ -3,9 +3,11 @@
 <head>
  <title>Виолет - отзывы</title>
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  
  <style>
-   @-webkit-keyframes swing {
+ @-webkit-keyframes swing {
   15% {
     -webkit-transform: translateX(9px);
     transform: translateX(9px);
@@ -57,87 +59,142 @@
     transform: translateX(0);
   }
 }
- 
-  body {
-   margin: 0;
-   padding: 0;
-   font-family: Arial, sans-serif;
-   background-color: #f8f5f6;
-  }
-  .container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
-  }
-  .btn {
-   display: block;
-   min-width: 256px;
-   min-height: 256px;
-   margin-bottom: 20px;
-   border-radius: 25px;
-   color: #fff;
-   font-size: 18px;
-   font-weight: bold;
-   text-align: center;
-   line-height: 50px;
-   cursor: pointer;
-   transition: background-color 0.3s ease-in-out;
-  }
-  .flamp {
-	background-color: #2e6be5;
-	border-radius: 50%;
-	/* border: 5px dashed black; */
-  }
-  .flamp:hover {
-  -webkit-animation: swing 0.6s ease;
-  animation: swing 0.6s ease;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
-   /* border: 5px dashed #844995; */
-  }
-  .vk {
-   background-color: #2d76a6;
-   border-radius: 50%;
-   /* border: 5px dashed black; */
-  }
-  .vk:hover {
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ background-color: #f2f2f2;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+ max-width: 700px;
+ margin: 0 auto;
+ text-align: center;
+}
+
+h1 {
+ font-size: 57px;
+ margin-bottom: 5vh;
+  margin-top: 5vh;
+ color: #333;
+  font-weight: normal;
+}
+
+h1:hover {
  -webkit-animation: swing 0.6s ease;
   animation: swing 0.6s ease;
    -webkit-animation-iteration-count: 1;
    animation-iteration-count: 1;
-	/* border: 5px dashed #2d76a6; */
-  }
-  .gis {
+}
+
+.social-buttons {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+}
+
+.btn {
+ display: block;
+ width: 256px;
+ height: 256px;
+ margin: 20px;
+ border-radius: 50%;
+ color: #fff;
+ font-size: 36px;
+ font-weight: bold;
+ text-align: center;
+ line-height: 200px;
+ cursor: pointer;
+ transition: background-color 0.3s ease-in-out;
+}
+
+.vk {
+   background-color: #2d76a6;
+}
+
+.vk:hover {
+   background-color: #2d76a6;
+ -webkit-animation: swing 0.6s ease;
+  animation: swing 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+}
+
+.gis {
    background-color: #f8f8f8;
-   border-radius: 50%;
    border: 5px dashed #C7C7C7;
-  }
-  .gis:hover {
+}
+
+.gis:hover {
+   background-color: #f8f8f8;
   -webkit-animation: swing 0.6s ease;
   animation: swing 0.6s ease;
    -webkit-animation-iteration-count: 1;
    animation-iteration-count: 1;
-   /* border: 5px dashed #f8f8f8; */
+}
+
+.flamp {
+	background-color: #2e6be5;
+}
+
+.flamp:hover {
+	background-color: #2e6be5;
+  -webkit-animation: swing 0.6s ease;
+  animation: swing 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+}
+
+.logo {
+	background-color: #ffffff;
+	border: 5px dashed #C988BA;
+}
+
+.logo:hover {
+	background-color: #ffffff;
+  -webkit-animation: swing 0.6s ease;
+  animation: swing 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+}
+
+ @media screen and (max-width: 1080px) {
+   body {
+    transform: scale(1);
+   }
   }
-  @media screen and (max-width: 1024px) {
-   .container {
+   @media screen and (max-width: 960px) {
+   body {
     transform: scale(0.8);
    }
   }
    @media screen and (max-width: 720px) {
-   .container {
+   body {
+    transform: scale(0.7);
+   }
+   @media screen and (max-width: 640px) {
+   body {
     transform: scale(0.6);
    }
   }
  </style>
+ 
 </head>
 <body>
  <div class="container">
-  <a href="#" class="btn vk" style="background-image:url(vk.png);background-repeat:space;"></a>
-  <a href="#" class="btn gis" style="background-image:url(2gis.png);background-repeat:space;"></a>
-  <a href="#" class="btn flamp" style="background-image:url(f.png);background-repeat:space;"></a>
+  <h1>Бонусы за отзыв (:</h1>
+  <div class="social-buttons">
+  	<a href="#" class="btn logo" style="background-image:url(logo.png);background-repeat:space;"></a>
+   <a href="#" class="btn vk" style="background-image:url(vk.png);background-repeat:space;"></a>
+   <a href="#" class="btn flamp" style="background-image:url(flamp.png);background-repeat:space;"></a>
+      <a href="#" class="btn gis" style="background-image:url(2gis.png);background-repeat:space;"></a>
+  </div>
  </div>
 </body>
 </html>
