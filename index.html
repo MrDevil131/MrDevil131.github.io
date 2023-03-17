@@ -69,7 +69,7 @@
 			}
 			.container {
 			max-width: 600px;
-			padding-top: 5vh;
+			padding-top: 10vh;
 			margin: 0 auto;
 			text-align: center;
 			}
@@ -95,11 +95,21 @@
 			}
 			h1 {
 			font-size: 60px;
-			margin-bottom: 5vh;
-			margin-top: 5vh;
+			margin-bottom: 2vh;
 			color: #333;
 			}
 			h1:hover {
+			-webkit-animation: swing 0.6s ease;
+			animation: swing 0.6s ease;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			}
+			h2 {
+			font-size: 20px;
+			margin-bottom: 5vh;
+			color: #333;
+			}
+			h2:hover {
 			-webkit-animation: swing 0.6s ease;
 			animation: swing 0.6s ease;
 			-webkit-animation-iteration-count: 1;
@@ -207,7 +217,8 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Бонусы за отзывы</h1>
+			<h1>Бонусы за отзывы!</h1>
+			<h2>Оставьте ваш отзыв о продукции кондитерской Violet на одном из этих сервисов, отправьте скриншот в личные сообщения на нашей странице в VK и получите 100 бонусов на вашу карту лояльности (:</h2>
 			<div class="social-buttons">
 				<a href="#" onclick="timeout('https://violetekb.ru/'); return false;" class="btn logo" style="background-image:url(logo.png);background-repeat:space;background-size: contain;"></a>
 				<a href="#" onclick="timeout('https://vk.com/topic-206092910_49670541'); return false;" class="btn vk" style="background-image:url(vk.png);background-repeat:space;background-size: contain;"></a>
