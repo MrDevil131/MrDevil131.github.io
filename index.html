@@ -169,7 +169,6 @@
 			-webkit-animation-iteration-count: 1;
 			animation-iteration-count: 1;
 			}
-
 			@media screen and (max-width: 850px) {
 			.btn {
 			width: 224px;
@@ -186,7 +185,6 @@
 			padding-right 10wv;
 			}
 			}
-		
 			@media screen and (max-width: 500px) {
 			.btn {
 			width: 160px;
@@ -201,7 +199,6 @@
 			padding-right 15wh;
 			}
 			}
-			
 			@media screen and (max-width: 428px) {
 			.btn {
 			width: 140px;
@@ -215,7 +212,6 @@
 			padding-left 2wv;
 			padding-right 2wv;
 			}
-
 			@media screen and (max-width: 414px) {
 			.btn {
 			width: 140px;
@@ -229,7 +225,6 @@
 			padding-left 2wv;
 			padding-right 2wv;
 			}
-
 			@media screen and (max-width: 414px) and (min-height: 896px) {
 			.btn {
 			width: 140px;
@@ -243,7 +238,6 @@
 			padding-left 2wv;
 			padding-right 2wv;
 			}
-
 			@media screen and (max-width: 390px) {
 			.btn {
 			width: 140px;
@@ -257,7 +251,6 @@
 			padding-left 2wv;
 			padding-right 2wv;
 			}
-
 			@media screen and (max-width: 375px) {
 			.btn {
 			width: 140px;
@@ -271,7 +264,6 @@
 			padding-left 2wv;
 			padding-right 2wv;
 			}
-			
 			@media screen and (max-width: 360px) and (min-height: 668px) {
 			.btn {
 			width: 140px;
@@ -287,8 +279,8 @@
 			}
 		</style>
 	</head>
-	<body id="body">
-		<div class="container" id="container" style="display: none;">
+	<body id="body" style="opacity: 0;">
+		<div class="container" id="container" style="display: none; ">
 			<h1>Бонусы за отзывы!</h1>
 			<h2>Оставьте ваш отзыв о продукции кондитерской Violet на одном из этих сервисов, отправьте скриншот в личные сообщения на нашей странице в VK и получите 100 бонусов на вашу карту лояльности (:</h2>
 			<div class="social-buttons">
@@ -299,18 +291,32 @@
 			</div>
 		</div>
 		<script>
-		function timeout(url) {
-		setTimeout(function() {
-		window.location.href = url;
-		}, 500);
-		}
+			function timeout(url) {
+			setTimeout(function() {
+			window.location.href = url;
+			}, 500);
+			}
 		</script>
 		<script type="text/javascript">
-		setTimeout(function() {
-        document.getElementById("container").style.display = "inline-block";
-		document.getElementById("body").style.backgroundImage = "none";
-		document.getElementById("body").style.backgroundColor = "#f2f2f2";
-		}, 3000);
-	</script>
+			setTimeout(function() {
+			document.getElementById("container").style.display = "inline-block";
+			document.getElementById("body").style.backgroundImage = "url(bg2.png)";
+			
+			function fadeIn(el, speed) {
+			var step = 1 / speed;
+			var interval = setInterval(function() {
+			  if (+el.style.opacity >= 1)
+			    clearInterval(interval);
+			    
+			  el.style.opacity = +div.style.opacity + step;
+			}, speed / 1000);
+			}
+			
+			var div = document.getElementById("body")
+			fadeIn(div, 150);
+			
+			}, 3000);
+		</script>
+		<script type="text/javascript"></script>	
 	</body>
 </html>
