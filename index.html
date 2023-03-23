@@ -68,7 +68,7 @@
 			body {
 			width: 100wv;
 			height: 100vh;
-			line-height: 100vh;
+			position: relative;
 			background-image: url("bg.png");
 			background-repeat: space;
 			background-size: cover;
@@ -79,11 +79,11 @@
 			max-width: 90%;
 			margin-left: auto;
 			margin-right: auto;
-			padding: 0 0 20% 0;
+			padding: 0 0 3% 0;
 			text-align: center;
-			display: inline-block; /* центрировать..*/
-			vertical-align: middle;  /* ..по вертикали */
-			line-height: 1.25; /* переопределить высоту строки на обычную */
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
 			}
 			.social-buttons {
 			display: flex;
