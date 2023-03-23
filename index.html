@@ -277,7 +277,9 @@
 		</style>
 		<script>
 		window.onload = function() {
-		window.scrollTo(0, document.body.scrollHeight / 2);
+		var scrollTop = (document.documentElement.scrollHeight - window.innerHeight) / 2;
+		window.scrollTo(0, scrollTop);
+		}
 		</script>
 	</head>
 	<body id="body" style="opacity: 0;transition: background-image 0.5s ease-in-out;overflow: hidden;">
