@@ -2,9 +2,24 @@
 <html>
 	<head>
 		<title>Виолет - отзывы</title>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+				<script>
+function setBodyHeight() {
+  // Get the viewport height
+  var windowHeight = window.innerHeight;
+  
+  // Get the body element
+  var body = document.body;
+  
+  // Calculate the new height by subtracting the address bar height
+  var newHeight = windowHeight - window.outerHeight + body.clientHeight;
+  
+  // Set the new height to the body
+  body.style.height = newHeight + 'px';
+}
+		</script>
 		<style>
 			@-webkit-keyframes swing {
 			15% {
@@ -65,7 +80,6 @@
 			}
 			body {
 			width: 100wv;
-			height: 100vh;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -79,7 +93,7 @@
 			max-width: 90%;
 			margin-left: auto;
 			margin-right: auto;
-			padding: 0 0 23% 0;
+			padding: 0 0 3% 0;
 			text-align: center;
 			}
 			.social-buttons {
@@ -275,12 +289,6 @@
 			padding-right 2wv;
 			}
 		</style>
-		<script>
-		window.onload = function() {
-		var scrollTop = (document.documentElement.scrollHeight - window.innerHeight) / 2;
-		window.scrollTo(0, scrollTop);
-		}
-		</script>
 	</head>
 	<body id="body" style="opacity: 0;transition: background-image 0.5s ease-in-out;overflow: hidden;">
 		<div class="container" id="container" style="opacity: 0; transition: opacity 3s ease-in-out;">
@@ -306,7 +314,8 @@
 			document.getElementById('container').style.opacity = 1;
 			}, 1500);
 		</script>
-		<script type="text/javascript">
+		<script type="text/javascript">		
+		
 			function changeBodyBackgroundImage(imageUrl) {
 			  // сначала скрыть старое фоновое изображение
 			  document.body.style.opacity = 0;
