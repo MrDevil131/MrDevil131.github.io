@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opengater VPN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: #F1F1F1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                        0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            /* Добавляем отступы для маленьких экранов */
+            padding: 20px;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .step p, .step img, .step video, .step button {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 0.5s forwards;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .step p:nth-child(1) { animation-delay: 0.1s; }
+        .step p:nth-child(2) { animation-delay: 0.2s; }
+        .step p:nth-child(3) { animation-delay: 0.3s; }
+        .step img, .step video { animation-delay: 0.2s; }
+        .step p {
+            padding: 15px;
+            margin: 10px 0;
+            text-shadow: 0 0 2px white;
+            background: #3DB4FF;
+            box-shadow: 0 0 10px #3DB4FF;
+        }
+        button {
+            background: #3DB4FF;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            margin: 10px 5px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 16px;
+            /* Обеспечиваем кнопку, чтобы все они были в одной строке */
+            white-space: nowrap;
+        }
+        button:hover {
+            background: #4E5DFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .theme-toggle {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: slideIn 1s;
+        }
+        .theme-toggle label {
+            margin: 0 10px;
+        }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+        /* Video styles */
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;  /* Border radius for videos */
+            margin: 10px 0; /* Ensure spacing around videos */
+        }
+        /* Dark Theme */
+        body.dark {
+            background-color: #010001;
+            color: white;
+        }
+        body.dark .container {
+            background: #242224;
+        }
+        body.dark .step p {
+            text-shadow: 0 0 2px black;
+            background: #4D4C4E;
+            box-shadow: 0 0 10px #4D4C4E;
+        }
+        body.dark button {
+            background: #3294D5;
+        }
+        body.dark button:hover {
+            background: #4350D5;
+        }
+        body.dark button {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="step active" id="step0">
+            <p>Выберите тему: <label><input type="radio" name="theme" value="light"> светлая</label> <label><input type="radio" name="theme" value="dark"> тёмная</label></p>
+            <p>Выберите вашу платформу: <label><input type="radio" name="platform" value="ios"> ios</label> <label><input type="radio" name="platform" value="android" onclick="alert('Пока не готово :(');" disabled> android</label></p>
+            <button onclick="validateStep0()">></button>
+        </div>
+        <div class="step" id="step1">
+            <p>Нажмите "Скачать приложение", затем нажмите "Загрузить в AppStore", вернитесь сюда и перейдите к следующему шагу</p>
+            <video controls autoplay loop muted>
+                <source src="v_ios/1.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <a id="downloadLink" href="https://apps.apple.com/us/app/karing/id6472431552">
+                <button>Скачать приложение</button>
+            </a>
+            <button onclick="prevStep()"><</button>
+            <button onclick="nextStep()">></button>
+        </div>
+        <div class="step" id="step2">
+            <p>Откройте приложение Karing, нажмите "Accept & Continue"</p>
+            <p>Затем выберите язык и нажмите "Дальше"</p>
+            <p>После этого выберите вашу страну и нажмите "Дальше" дважды. Как только всё будет готово, вернитесь сюда и перейдите к следующему шагу</p>
+            <video controls autoplay loop muted>
+                <source src="v_ios/2.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <button onclick="openKaring()">Открыть Karing</button>
+            <button onclick="prevStep()"><</button>
+            <button onclick="nextStep()">></button>
+        </div>
+        <div class="step" id="step3">
+            <p>Нажмите "Добавить подписку", ниже затем нажмите на кнопку в правом верхнем углу, чтобы подтвердить добавление</p>
+            <p>Включите VPN и подтвердите добавление конфигурации</p>
+            <video controls autoplay loop muted>
+                <source src="v_ios/3.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <button>Добавить подписку</button>
+            <button onclick="prevStep()"><</button>
+            <button onclick="closeWebApp()">Закрыть</button>
+        </div>
+    </div>
+    <script>
+        let currentStep = 0;
+        const steps = document.querySelectorAll('.step');
+        const themeRadios = document.querySelectorAll('input[name="theme"]');
+        const platformRadios = document.querySelectorAll('input[name="platform"]');
+        const downloadLink = document.getElementById('downloadLink');
+
+        function nextStep() {
+            steps[currentStep].classList.remove('active');
+            steps[currentStep].style.animation = 'fadeOut 0.5s forwards'; // Добавляем анимацию исчезновения
+
+            currentStep++;
+            if (currentStep < steps.length) {
+                steps[currentStep].style.animation = 'slideIn 0.5s forwards'; // Добавляем анимацию появления
+                steps[currentStep].classList.add('active');
+            }
+        }
+
+        function prevStep() {
+            steps[currentStep].classList.remove('active');
+            steps[currentStep].style.animation = 'fadeOut 0.5s forwards'; // Добавляем анимацию исчезновения
+
+            currentStep--;
+            if (currentStep >= 0) {
+                steps[currentStep].style.animation = 'slideIn 0.5s forwards'; // Добавляем анимацию появления
+                steps[currentStep].classList.add('active');
+            }
+        }
+
+        function validateStep0() {
+            const themeChecked = document.querySelector('input[name="theme"]:checked');
+            const platformChecked = document.querySelector('input[name="platform"]:checked');
+            if (themeChecked && platformChecked) {
+                nextStep();
+            } else {
+                alert('Пожалуйста, выберите тему и платформу.');
+            }
+        }
+
+        function closeWebApp() {
+            // Проверяем, что мы находимся в окружении Telegram Web App
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.close();
+            } else {
+                alert('Эта функция доступна только в Telegram Web App.');
+            }
+        }
+
+        function openKaring() {
+            window.location.href = "karing://";
+        }
+
+        themeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'light') {
+                    document.body.classList.remove('dark');
+                    document.body.style.backgroundColor = 'white';
+                    document.querySelector('.container').style.backgroundColor = '#F1F1F1';
+                    document.querySelectorAll('.step p').forEach(p => {
+                        p.style.background = '#3DB4FF';
+                        p.style.boxShadow = '0 0 10px #3DB4FF';
+                    });
+                    document.querySelectorAll('button').forEach(button => {
+                        button.style.background = '#3DB4FF';
+                        button.onmouseover = () => button.style.background = '#4E5DFF';
+                        button.onmouseout = () => button.style.background = '#3DB4FF';
+                    });
+                } else {
+                    document.body.classList.add('dark');
+                    document.body.style.backgroundColor = '#010001';
+                    document.querySelector('.container').style.backgroundColor = '#242224';
+                    document.querySelectorAll('.step p').forEach(p => {
+                        p.style.background = '#4D4C4E';
+                        p.style.boxShadow = '0 0 10px #4D4C4E';
+                    });
+                    document.querySelectorAll('button').forEach(button => {
+                        button.style.background = '#3294D5';
+                        button.onmouseover = () => button.style.background = '#4350D5';
+                        button.onmouseout = () => button.style.background = '#3294D5';
+                    });
+                }
+            });
+        });
+
+        platformRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'ios') {
+                    downloadLink.href = 'https://apps.apple.com/us/app/karing/id6472431552';
+                } else {
+                    downloadLink.href = 'https://github.com/KaringX/karing/releases/tag/v1.0.23-275';
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
