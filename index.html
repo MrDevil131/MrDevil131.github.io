@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- Отключено масштабирование -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opengater VPN</title>
     <style>
         body {
@@ -26,6 +26,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
                         0 0 15px rgba(0, 0, 0, 0.1);
             position: relative;
+            /* Добавляем отступы для маленьких экранов */
             padding: 20px;
         }
         .step {
@@ -41,9 +42,9 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-        .step p:nth-child(1) { animation-delay: 0.1s; }
-        .step p:nth-child(2) { animation-delay: 0.2s; }
-        .step p:nth-child(3) { animation-delay: 0.3s; }
+        .step p:nth-child(1) { animation-delay: 0.3s; }
+        .step p:nth-child(2) { animation-delay: 0.4s; }
+        .step p:nth-child(3) { animation-delay: 0.5s; }
         .step img, .step video { animation-delay: 0.2s; }
         .step p {
             padding: 15px;
@@ -64,8 +65,8 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             font-weight: bold;
             font-size: 16px;
+            /* Обеспечиваем кнопку, чтобы все они были в одной строке */
             white-space: nowrap;
-            display: inline-block; /* Для размещения кнопок одной строкой */
         }
         button:hover {
             background: #4E5DFF;
@@ -87,12 +88,14 @@
         @keyframes fadeOut {
             to { opacity: 0; transform: translateY(-20px); }
         }
+        /* Video styles */
         video {
             width: 100%;
             height: auto;
-            border-radius: 10px; 
-            margin: 10px 0;
+            border-radius: 10px;  /* Border radius for videos */
+            margin: 10px 0; /* Ensure spacing around videos */
         }
+        /* Dark Theme */
         body.dark {
             background-color: #010001;
             color: white;
@@ -125,44 +128,40 @@
         </div>
         <div class="step" id="step1">
             <p>Нажмите "Скачать приложение", затем нажмите "Загрузить в AppStore", вернитесь сюда и перейдите к следующему шагу</p>
-            <video autoplay loop muted controls style="display: none;">
+            <video controls autoplay loop muted>
                 <source src="v_ios/1.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
-            <a id="downloadLink" href="https://apps.apple.com/us/app/karing/id6472431552">
-                <button>Скачать приложение</button>
+            <a id="downloadLink" href="https://apps.apple.com/us/app/karing/id6472431552" target="blank">
+                <button>Скачать</button>
             </a>
-            <div>
-                <button onclick="prevStep()"><</button>
-                <button onclick="nextStep()">></button>
-            </div>
+            <button onclick="prevStep()"><</button>
+            <button onclick="nextStep()">></button>
         </div>
         <div class="step" id="step2">
             <p>Откройте приложение Karing, нажмите "Accept & Continue"</p>
             <p>Затем выберите язык и нажмите "Дальше"</p>
             <p>После этого выберите вашу страну и нажмите "Дальше" дважды. Как только всё будет готово, вернитесь сюда и перейдите к следующему шагу</p>
-            <video autoplay loop muted controls style="display: none;">
+            <video controls autoplay loop muted>
                 <source src="v_ios/2.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
-            <button onclick="openKaring()">Открыть Karing</button>
-            <div>
-                <button onclick="prevStep()"><</button>
-                <button onclick="nextStep()">></button>
-            </div>
+			<a href="karing://" target="_blank">
+				<button>Открыть</button>
+			</a>
+            <button onclick="prevStep()"><</button>
+            <button onclick="nextStep()">></button>
         </div>
         <div class="step" id="step3">
             <p>Нажмите "Добавить подписку", ниже затем нажмите на кнопку в правом верхнем углу, чтобы подтвердить добавление</p>
             <p>Включите VPN и подтвердите добавление конфигурации</p>
-            <video autoplay loop muted controls style="display: none;">
+            <video controls autoplay loop muted>
                 <source src="v_ios/3.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
             <button>Добавить подписку</button>
-            <div>
-                <button onclick="prevStep()"><</button>
-                <button onclick="closeWebApp()">Закрыть</button>
-            </div>
+            <button onclick="prevStep()"><</button>
+            <button onclick="closeWebApp()">Закрыть</button>
         </div>
     </div>
     <script>
@@ -174,22 +173,22 @@
 
         function nextStep() {
             steps[currentStep].classList.remove('active');
-            steps[currentStep].style.animation = 'fadeOut 0.5s forwards';
+            steps[currentStep].style.animation = 'fadeOut 0.5s forwards'; // Добавляем анимацию исчезновения
 
             currentStep++;
             if (currentStep < steps.length) {
-                steps[currentStep].style.animation = 'slideIn 0.5s forwards';
+                steps[currentStep].style.animation = 'slideIn 0.5s forwards'; // Добавляем анимацию появления
                 steps[currentStep].classList.add('active');
             }
         }
 
         function prevStep() {
             steps[currentStep].classList.remove('active');
-            steps[currentStep].style.animation = 'fadeOut 0.5s forwards';
+            steps[currentStep].style.animation = 'fadeOut 0.5s forwards'; // Добавляем анимацию исчезновения
 
             currentStep--;
             if (currentStep >= 0) {
-                steps[currentStep].style.animation = 'slideIn 0.5s forwards';
+                steps[currentStep].style.animation = 'slideIn 0.5s forwards'; // Добавляем анимацию появления
                 steps[currentStep].classList.add('active');
             }
         }
@@ -205,6 +204,7 @@
         }
 
         function closeWebApp() {
+            // Проверяем, что мы находимся в окружении Telegram Web App
             if (window.Telegram && window.Telegram.WebApp) {
                 window.Telegram.WebApp.close();
             } else {
@@ -213,7 +213,7 @@
         }
 
         function openKaring() {
-            window.location.href = "karing://install-config?url=#";
+            window.location.href = "karing://";
         }
 
         themeRadios.forEach(radio => {
